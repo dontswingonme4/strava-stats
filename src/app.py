@@ -1,8 +1,9 @@
-from flask import Flask, request, render_template
+from flask import Flask, render_template
 from data_collector import collect_data
 import sqlite3
 
 app = Flask(__name__)
+
 
 @app.route("/")
 def main():
@@ -14,10 +15,12 @@ def main():
      <a href="/view_data">View Activity Data</a>
      '''
 
+
 @app.route("/get_latest_activity", methods=["POST"])
 def get_latest_activity():
     collect_data()
     return "Activity Data Up to Date"
+
 
 @app.route("/view_data")
 def view_data():
@@ -34,6 +37,7 @@ def view_data():
 
     # Render a template to display the data
     return render_template('view_data.html', data=data)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

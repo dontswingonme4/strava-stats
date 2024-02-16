@@ -2,6 +2,7 @@ import requests
 import urllib3
 import sqlite3
 
+
 def collect_data():
     # Establish connection to SQLite database
     con = sqlite3.connect('activity.db')
@@ -65,6 +66,7 @@ def collect_data():
     # Commit changes and close connection
     con.commit()
     con.close()
+
 
 if __name__ == "__main__":
     collect_data()  # If the script is run directly, collect data
