@@ -10,6 +10,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
+    # Call collect_data function to get latest data
+    collect_data()
     # Call analyze_data function to get the number of activities
     num_activities = analyze_data()
     return render_template('main.html', num_activities=num_activities)
