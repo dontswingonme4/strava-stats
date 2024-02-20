@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from data_collector import collect_data
+from src.data_collector import collect_data
 import sqlite3
 
 app = Flask(__name__)
