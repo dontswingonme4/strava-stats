@@ -7,13 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return '''
-     <form action="/get_latest_activity" method="POST">
-         <input type="submit" value="Get Latest Activity Data">
-     </form>
-     <br>
-     <a href="/view_data">View Activity Data</a>
-     '''
+    return render_template(main.html)
 
 
 @app.route("/get_latest_activity", methods=["POST"])
