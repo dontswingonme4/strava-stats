@@ -13,7 +13,6 @@ def main():
 @app.route("/get_latest_activity", methods=["POST"])
 def get_latest_activity():
     collect_data()
-    return "Activity Data Up to Date"
 
 
 @app.route("/view_data")
