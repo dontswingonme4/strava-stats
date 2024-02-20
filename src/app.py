@@ -10,10 +10,10 @@ def main():
     return render_template('main.html')
 
 
-@app.route("/get_latest_activity", methods=["POST"])
+@app.route("/", methods=["POST"])
 def get_latest_activity():
     collect_data()
-    return None
+    return render_template('main.html')
 
 
 @app.route("/view_data")
