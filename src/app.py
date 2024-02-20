@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return render_template(main.html)
+    return render_template('main.html')
 
 
 @app.route("/get_latest_activity", methods=["POST"])
