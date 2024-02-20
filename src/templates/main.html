@@ -1,5 +1,18 @@
-<form action="/get_latest_activity" method="POST">
-    <input type="submit" value="Get Latest Activity Data">
-</form>
-<br>
-<a href="/view_data">View Activity Data</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+<body>
+    <h1>Welcome to the Activity Tracker App</h1>
+    <p>Total number of activities: {{ num_activities }}</p>
+
+    <form action="/get_latest_activity" method="POST">
+        <input type="submit" value="Get Latest Activity Data">
+    </form>
+    <br>
+    <a href="/view_data">View Activity Data</a>
+</body>
+</html>

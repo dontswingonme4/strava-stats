@@ -1,5 +1,8 @@
 from flask import Flask, render_template
-from src.data_collector import collect_data
+from src.data_collector import collect_data #when deploying****
+from src.data_analyzer import analyze_data #when deploying****
+# from data_collector import collect_data
+# from data_analyzer import analyze_data
 import sqlite3
 
 app = Flask(__name__)
@@ -7,13 +10,15 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return render_template('main.html')
+    # Call analyze_data function to get the number of activities
+    num_activities = analyze_data()
+    return render_template('main.html', num_activities=num_activities)
 
 
 @app.route("/get_latest_activity", methods=["POST"])
 def get_latest_activity():
     collect_data()
-    return "Activity Data Up to Date"
+    return "Activity Data Up to Date, press back button on browser"
 
 
 @app.route("/view_data")
