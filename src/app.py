@@ -10,7 +10,7 @@ def main():
     return render_template('main.html')
 
 
-@app.route("/", methods=["POST"])
+@app.route("/")
 def get_latest_activity():
     collect_data()
     return render_template('main.html')
