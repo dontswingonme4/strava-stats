@@ -1,8 +1,8 @@
 from flask import Flask, render_template
-from src.data_collector import collect_data  # When deploying to Heroku
-from src.data_analyzer import analyze_data  # When deploying to Heroku
-# from data_collector import collect_data  # When running locally
-# from data_analyzer import analyze_data  # When running locally
+# from src.data_collector import collect_data  # When deploying to Heroku
+# from src.data_analyzer import analyze_data  # When deploying to Heroku
+from data_collector import collect_data  # When running locally
+from data_analyzer import analyze_data  # When running locally
 import sqlite3
 
 app = Flask(__name__)
